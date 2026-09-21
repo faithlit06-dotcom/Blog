@@ -25,6 +25,7 @@
             <label for="title">Title:</label>
             <input type="text" name="title" id="title" placeholder="Enter post title" required value="{{$post->title}}">
         </div>
+        <br>
        <div>
         <label for="content">Content:</label>
         <textarea name="content" id="content" placeholder="Enter post content" required>{{$post->content}}</textarea>
@@ -33,8 +34,9 @@
         <label for="author">Author:</label>
         <input type="text" name="author" id="author" placeholder="Enter author name" required value="{{$post->author}}">
     </div>
+    <br>
     <div>
-            <button type="submit" value="Update Post">Update Post</button>
+            <button style="background: #3b82f6; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer;" type="submit" value="Update Post">Update Post</button>
     </div>
     </form>
 </body>

@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
 {
     // Fetches posts ordered in descending order (newest first)
-    $posts = Post::latest()->get();
+    $posts = Post::where('user_id', auth()->id())->latest()->get();
     return view('posts.index', compact('posts'));
 }
 
@@ -28,6 +28,8 @@ class PostController extends Controller
             'author' => 'required|string|max:255',
             'content' => 'required|string',
         ]);
+
+        $validatedData['user_id'] = auth()->id(); // Assign the authenticated user's ID to the post
 
         $post = Post::create($validatedData);
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
