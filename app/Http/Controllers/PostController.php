@@ -14,7 +14,7 @@ class PostController extends Controller
 {
     // Fetches posts ordered in descending order (newest first)
     $posts = Post::latest()->get();
-    return view('Posts.index', compact('posts'));
+    return view('posts.index', compact('posts'));
 }
 
     public function create() {
